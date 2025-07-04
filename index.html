@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Adansam Enterprise</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0c0c0c;
+      color: #00ffcc;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      line-height: 1.6;
+      padding-top: 80px;
+    }
+    nav {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: #101010;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 15px 0;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    }
+    nav a {
+      color: #00ffcc;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      transition: color 0.3s ease;
+    }
+    nav a:hover { color: #ffffff; }
+    .hero { margin: 40px auto; max-width: 650px; }
+    .hero img { width: 160px; border-radius: 12px; }
+    .hero h1 { font-size: 3rem; margin-top: 12px; }
+    .hero p.tagline { font-size: 1.4rem; margin: 12px 0 0; }
+    section { padding: 70px 20px; max-width: 800px; margin: auto; }
+    section h2 { font-size: 2.2rem; margin-bottom: 15px; }
+    #topBtn {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      background: #00ffcc; color: #0c0c0c; border: none; border-radius: 50%;
+      width: 46px; height: 46px; font-size: 1.4rem; cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0,0,0,.45); display: none;
+      transition: opacity .3s ease, transform .3s ease;
+    }
+    #topBtn:hover { transform: translateY(-3px); }
+    form {
+      max-width: 420px;
+      margin: 24px auto;
+      text-align: left;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 18px;
+      border-radius: 6px;
+      border: 1px solid #444;
+      background: #1a1a1a;
+      color: #00ffcc;
+    }
+    button[type="submit"] {
+      background: #00ffcc;
+      color: #000;
+      font-weight: bold;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html#home">Home</a>
+    <a href="services.html">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div id="home" class="hero">
+    <img src="assets/adansam-logo.png" alt="Adansam Enterprise Logo">
+    <h1>Adansam Enterprise</h1>
+    <p class="tagline">Cybersecurity&nbsp;| Database&nbsp;Security&nbsp;| OS&nbsp;Hardening</p>
+    <p style="margin-top:12px;">We guard digital kingdoms. <span style="opacity:0.7">Site under active construction…</span></p>
+  </div>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact">
+      <label>Name<br><input name="name" required></label><br>
+      <label>Email<br><input type="email" name="email" required></label><br>
+      <label>Message<br><textarea name="message" rows="5" required></textarea></label><br>
+      <button type="submit">Send</button>
+    </form>
+    <p>Email: <a href="mailto:info@adansamsecurity.com" style="color:#00ffcc;">info@adansamsecurity.com</a></p>
+  </section>
+
+  <button id="topBtn" title="Back to top">↑</button>
+
+  <script>
+    const btn = document.getElementById('topBtn');
+    window.onscroll = () => btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
+    btn.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
+  </script>
+
+</body>
+</html>
